@@ -1,0 +1,19 @@
+:root {
+    --bg-home: #2D2D2D;
+    --bg: #eae8e4;
+    --sections: #270855;
+    --btn: #bdb1ce;
+    --txt: #333;
+    --white: #fff;
+    --gray-light: #cfcfcf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.2s ease;
+}
