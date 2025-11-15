@@ -1,19 +1,410 @@
-:root {
-    --bg-home: #2D2D2D;
-    --bg: #eae8e4;
-    --sections: #270855;
-    --btn: #bdb1ce;
-    --txt: #333;
-    --white: #fff;
-    --gray-light: #cfcfcf;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --bg-home: #2D2D2D;
+    --bg: #eae8e4;
+    --sections: #3c0c60;
+    --btn: #dfbbfe;
+    --txt: #333;
+    --white: #fff;
+    --hoverBtn: #905fbb;
+    --borderBtnHover: #340458;
+    --borderBtn: #7d41ac;
+}
+
+body {
+    background: var(--bg);
+    color: var(--txt);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+header {
+    background: var(--bg-home);
+    color: var(--white);
+    border-radius: 0 0 20px 20px;
+    padding: 40px 8% 80px;
+    overflow: hidden;
+}
+
+.barraNav {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.logo {
+    font-size: clamp(1.8rem, 4vw, 2.4rem); /* responsivo: mínimo, relativo à tela, máximo */
+    font-weight: 800;
     text-decoration: none;
+    color: var(--white);
+}
+
+nav ul {
     list-style: none;
-    transition: 0.2s ease;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li a {
+    position: relative; /* Necessário para o ::after */
+    color: var(--bg);
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* responsivo */
+    transition: .3s;
+}
+
+/* Linha invisível inicialmente */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Distância da linha para o texto */
+    width: 0%;
+    height: 2px; /* Espessura da linha */
+    background-color: var(--bg);
+    transition: width .3s ease;
+}
+
+/* Linha aparece no hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.home-container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.home-container .content h1 {
+    font-size: clamp(2rem, 5vw, 3.3rem); /* responsivo */
+    font-weight: 800;
+    max-width: 600px;
+    line-height: 1.2;
+}
+
+.home-container .content p {
+    margin-top: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* responsivo */
+    color: var(--bg);
+    max-width: 520px;
+}
+
+.header-image {
+    width: 45%;
+    max-width: 600px;
+}
+
+.header-image img {
+    width: 100%;
+    display: block;
+}
+
+.cards-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.cards-section .title {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* responsivo */
+    margin-bottom: 10px;
+}
+
+.cards-section .text {
+    color: var(--txt);
+    font-size: clamp(1rem, 1.2vw, 1rem); /* responsivo básico */
+    margin-bottom: 35px;
+}
+
+.cards-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card-img {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.card-img:hover {
+    transform: translateY(-5px);
+}
+
+.image {
+    padding-bottom: 10px;
+}
+
+.image-container {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.image-container>h3, .image-container>p {
+    grid-column: 1 / -1;
+}
+
+.image-container h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* responsivo */
+}
+
+.image-container p {
+    font-size: clamp(0.95rem, 1.2vw, 1rem); /* responsivo */
+    color: var(--txt);
+    margin-bottom: 25px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.app-container {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    background: var(--sections);
+    color: var(--white);
+    width: 100%;
+    max-width: 1300px;
+    padding: 60px 70px;
+    border-radius: 35px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 80px;
+}
+
+.app h3 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem); /* responsivo */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    grid-column: 1;
+}
+
+.app p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem); /* responsivo */
+    color: var(--bg);
+    line-height: 1.55;
+    max-width: 750px;
+    grid-column: 1;
+}
+
+.app img {
+    width: 190px;
+    grid-column: 2;
+    justify-self: end;
+}
+
+.app img:nth-of-type(2) {
+    margin-top: 18px;
+}
+
+.tag-container {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.tags h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem); /* responsivo */
+    padding-bottom: 3rem;
+}
+
+.tags ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.tags ul li {
+    padding: 12px 25px;
+    background: var(--btn);
+    border-radius: 20px;
+    border: 2px solid var(--borderBtn);
+    color: var(--borderBtn);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.tags ul li:hover {
+    background: var(--hoverBtn);
+    border-color: var(--borderBtnHover);
+    color: var(--borderBtnHover);
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.card button {
+    padding: 10px 20px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem); /* responsivo */
+    border: 1px solid var(--borderBtn);
+    color: var(--borderBtn);
+    background: var(--btn);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.card button:hover {
+    background: var(--hoverBtn);
+    border-color: var(--borderBtnHover);
+    color: var(--borderBtnHover);
+}
+
+footer {
+    background: var(--bg-home);
+    color: var(--white);
+    padding: 60px 8% 20px;
+    margin-top: 70px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.footer form {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.footer input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+}
+
+.verificacao-seguranca {
+    margin-top: 25px;
+}
+
+.verificacao-seguranca input {
+    width: 100px;
+    padding: 6px;
+}
+
+.verificacao-seguranca button {
+    padding: 8px 16px;
+    background: var(--btn);
+    border: 1px solid var(--borderBtn);
+    color: var(--borderBtn);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.verificacao-seguranca button:hover{
+    background: var(--hoverBtn);
+    border: var(--borderBtnHover);
+    color: var(--borderBtnHover);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--bg);
+    margin: 20px 0;
+}
+
+.information-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.social-midia {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-midia img {
+    height: auto;
+    width: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* animação suave */
+}
+
+.social-midia img:hover {
+    transform: scale(1.2); /* aumenta 20% no hover */
+}
+
+
+.information-container h3 {
+    font-size: clamp(1rem, 1.5vw, 1.5rem); /* responsivo */
+    padding-bottom: 10px;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links button {
+    position: relative; /* necessário para o ::after */
+    background: var(--bg-home);
+    color: var(--bg);
+    border: none;
+    font-weight: 100;
+    font-size: clamp(0.7rem, 1vw, 0.8rem); /* responsivo */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Linha invisível inicialmente */
+.links button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* linha encostada na base do botão */
+    width: 0%;
+    height: 1px; /* espessura da linha */
+    background-color: var(--btn);
+    transition: width 0.3s ease;
+}
+
+/* Linha aparece e anima no hover */
+.links button:hover::after {
+    width: 100%;
+}
+
+/* Efeito de hover do texto */
+.links button:hover {
+    font-weight: 400;
+    font-size: clamp(0.75rem, 1.05vw, 0.85rem); /* responsivo */
 }
