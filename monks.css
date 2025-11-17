@@ -5,6 +5,7 @@
     font-family: "Roboto", sans-serif;
 }
 
+/* Variáveis de cor principais */
 :root {
     --bg-home: #2D2D2D;
     --bg: #eae8e4;
@@ -29,27 +30,55 @@ img {
     border-radius: 12px;
 }
 
+/* Cabeçalho fixo */
 header {
     background: var(--bg-home);
     color: var(--white);
     border-radius: 0 0 20px 20px;
     padding: 40px 8% 80px;
     overflow: hidden;
+    position: relative;
+
 }
 
+
+/* Imagem ajustada à direita e com altura igual ao header */
+.monks-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+
+
+/* Barra de navegação principal */
 .barraNav {
     display: flex;
     align-items: center;
-    gap: 60px;
+    justify-content: flex-start;
+    gap: 5rem;
 }
 
+/* Grupo com logo e nome do projeto */
+.logo-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilização do texto da logo */
 .logo {
-    font-size: clamp(1.8rem, 4vw, 2.4rem); /* responsivo: mínimo, relativo à tela, máximo */
-    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 900;
     text-decoration: none;
     color: var(--white);
 }
 
+/* Menu principal */
 nav ul {
     list-style: none;
     display: flex;
@@ -57,21 +86,21 @@ nav ul {
 }
 
 nav ul li a {
-    position: relative; /* Necessário para o ::after */
+    position: relative;
     color: var(--bg);
     text-decoration: none;
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem); /* responsivo */
-    transition: .3s;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    transition: 0.3s;
 }
 
-/* Linha invisível inicialmente */
+/* Efeito linha do hover */
 nav ul li a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -3px; /* Distância da linha para o texto */
+    bottom: -3px;
     width: 0%;
-    height: 2px; /* Espessura da linha */
+    height: 2px;
     background-color: var(--bg);
     transition: width .3s ease;
 }
@@ -81,6 +110,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Layout inicial da seção principal */
 .home-container {
     margin-top: 70px;
     display: flex;
@@ -90,7 +120,7 @@ nav ul li a:hover::after {
 }
 
 .home-container .content h1 {
-    font-size: clamp(2rem, 5vw, 3.3rem); /* responsivo */
+    font-size: clamp(2rem, 5vw, 3.3rem);
     font-weight: 800;
     max-width: 600px;
     line-height: 1.2;
@@ -98,11 +128,12 @@ nav ul li a:hover::after {
 
 .home-container .content p {
     margin-top: 20px;
-    font-size: clamp(1rem, 1.5vw, 1.2rem); /* responsivo */
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: var(--bg);
     max-width: 520px;
 }
 
+/* Imagem principal do header */
 .header-image {
     width: 45%;
     max-width: 600px;
@@ -113,28 +144,31 @@ nav ul li a:hover::after {
     display: block;
 }
 
+/* Seção de cards */
 .cards-section {
     padding: 60px 8%;
     text-align: center;
 }
 
 .cards-section .title {
-    font-size: clamp(1.5rem, 3vw, 2rem); /* responsivo */
+    font-size: clamp(1.5rem, 3vw, 2rem);
     margin-bottom: 10px;
 }
 
 .cards-section .text {
     color: var(--txt);
-    font-size: clamp(1rem, 1.2vw, 1rem); /* responsivo básico */
+    font-size: clamp(1rem, 1.2vw, 1rem);
     margin-bottom: 35px;
 }
 
+/* Grid de cards responsivo */
 .cards-container {
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* Card individual */
 .card-img {
     background: var(--white);
     padding: 10px;
@@ -146,43 +180,68 @@ nav ul li a:hover::after {
     transform: translateY(-5px);
 }
 
-.image {
-    padding-bottom: 10px;
-}
-
+/* Galeria com imagem grande + imagens menores */
 .image-container {
-    padding: 60px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1100px;
+    margin: 12rem auto;
+    gap: 22px;
+    align-items: start;
 }
 
-.image-container>h3, .image-container>p {
-    grid-column: 1 / -1;
-}
-
-.image-container h3 {
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* responsivo */
-}
-
-.image-container p {
-    font-size: clamp(0.95rem, 1.2vw, 1rem); /* responsivo */
-    color: var(--txt);
-    margin-bottom: 25px;
-}
-
-.right {
+/* Coluna esquerda com texto e imagem grande */
+.text-and-big {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
+.big-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.big-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Coluna direita com imagens empilhadas */
+.small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.small-images img {
+    width: 100%;
+    height: 330px;
+    border-radius: 18px;
+    object-fit: cover;
+}
+
+/* Ajustes individuais de posicionamento */
+#imgP1 {
+    object-position: 50% 80%;
+}
+
+#imgP2 {
+    object-position: 50% 30%;
+}
+
+/* Seção destaque do aplicativo */
 .app-container {
-    padding: 80px 5%;
+    margin: 12rem 5%;
     display: flex;
     justify-content: center;
 }
 
+/* Bloco principal da área do app */
 .app {
     background: var(--sections);
     color: var(--white);
@@ -193,43 +252,50 @@ nav ul li a:hover::after {
 
     display: grid;
     grid-template-columns: 1fr auto;
-    align-items: center;
-    column-gap: 80px;
+    gap: 40px;
+    align-items: start;
 }
 
-.app h3 {
-    font-size: clamp(1.8rem, 3vw, 2.6rem); /* responsivo */
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
+.txt_app {
     grid-column: 1;
 }
 
-.app p {
-    font-size: clamp(1rem, 1.5vw, 1.25rem); /* responsivo */
-    color: var(--bg);
-    line-height: 1.55;
+.txt_app h3 {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.txt_app p {
+    font-size: 1.15rem;
+    line-height: 1.6;
     max-width: 750px;
-    grid-column: 1;
+    color: var(--bg);
 }
 
-.app img {
-    width: 190px;
+/* Bloco com imagens de download */
+.app_img {
     grid-column: 2;
-    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: flex-start;
+    align-items: flex-end;
 }
 
-.app img:nth-of-type(2) {
-    margin-top: 18px;
+.app_img img {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
 }
 
+/* Seção de tags */
 .tag-container {
-    padding: 60px 8%;
+    margin: 12rem 8%;
     text-align: center;
 }
 
 .tags h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem); /* responsivo */
+    font-size: clamp(1.5rem, 3vw, 2rem);
     padding-bottom: 3rem;
 }
 
@@ -241,6 +307,7 @@ nav ul li a:hover::after {
     justify-content: center;
 }
 
+/* Tag individual */
 .tags ul li {
     padding: 12px 25px;
     background: var(--btn);
@@ -251,12 +318,18 @@ nav ul li a:hover::after {
     transition: .25s;
 }
 
+/* Hover das tags */
 .tags ul li:hover {
     background: var(--hoverBtn);
     border-color: var(--borderBtnHover);
     color: var(--borderBtnHover);
 }
 
+.cards-section {
+    margin: 7rem auto;
+}
+
+/* Estilo genérico de card */
 .card {
     background: var(--white);
     padding: 25px;
@@ -264,9 +337,10 @@ nav ul li a:hover::after {
     text-align: center;
 }
 
+/* Botões dentro dos cards */
 .card button {
     padding: 10px 20px;
-    font-size: clamp(0.9rem, 1.2vw, 1rem); /* responsivo */
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
     border: 1px solid var(--borderBtn);
     color: var(--borderBtn);
     background: var(--btn);
@@ -281,23 +355,37 @@ nav ul li a:hover::after {
     color: var(--borderBtnHover);
 }
 
+/* Rodapé principal */
 footer {
-    background: var(--bg-home);
+    background-color: var(--bg-home);
     color: var(--white);
-    padding: 60px 8% 20px;
-    margin-top: 70px;
+    padding-bottom: 2rem;
 }
 
 .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    padding: 60px 8% 20px;
+    margin-top: 70px;
+    display: flex;
 }
 
+/* Caixa de documentos */
+.doc {
+    background: var(--bg);
+    padding: 1rem;
+    border-radius: 12px;
+    color: var(--txt);
+    margin-bottom: 2rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+/* Formulário no rodapé */
 .footer form {
     display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
     gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .footer input {
@@ -307,13 +395,38 @@ footer {
     width: 100%;
 }
 
+
+/* Área de verificação humana */
 .verificacao-seguranca {
     margin-top: 25px;
+    display: flex;
+}
+
+#pergunta {
+    padding: 0 1rem;
+    color: var(--borderBtn);
+    font-weight: 800;
+    background: #c3c1c5;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.verificacao-seguranca h4 {
+    margin-right: 1rem;
+}
+
+.verificacao-seguranca p {
+    margin: 0 1rem;
 }
 
 .verificacao-seguranca input {
     width: 100px;
-    padding: 6px;
+    margin: 6px;
+}
+
+#resposta {
+    margin: 0 1rem;
 }
 
 .verificacao-seguranca button {
@@ -326,7 +439,7 @@ footer {
     font-weight: 600;
 }
 
-.verificacao-seguranca button:hover{
+.verificacao-seguranca button:hover {
     background: var(--hoverBtn);
     border: var(--borderBtnHover);
     color: var(--borderBtnHover);
@@ -334,10 +447,11 @@ footer {
 
 hr {
     border: none;
-    border-top: 1px solid var(--bg);
+    border-top: 1px solid #cb93fc;
     margin: 20px 0;
 }
 
+/* Informações e links finais */
 .information-container {
     display: flex;
     justify-content: center;
@@ -347,6 +461,7 @@ hr {
     gap: 20px;
 }
 
+/* Ícones das redes sociais */
 .social-midia {
     display: flex;
     gap: 10px;
@@ -357,43 +472,43 @@ hr {
 .social-midia img {
     height: auto;
     width: 30px;
-    transition: transform 0.3s ease, filter 0.3s ease; /* animação suave */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .social-midia img:hover {
-    transform: scale(1.2); /* aumenta 20% no hover */
+    transform: scale(1.2);
 }
 
-
 .information-container h3 {
-    font-size: clamp(1rem, 1.5vw, 1.5rem); /* responsivo */
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     padding-bottom: 10px;
 }
 
+/* Links inferiores */
 .links {
     display: flex;
     gap: 20px;
 }
 
 .links button {
-    position: relative; /* necessário para o ::after */
+    position: relative;
     background: var(--bg-home);
     color: var(--bg);
     border: none;
     font-weight: 100;
-    font-size: clamp(0.7rem, 1vw, 0.8rem); /* responsivo */
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Linha invisível inicialmente */
+/* Animação da linha inferior */
 .links button::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0; /* linha encostada na base do botão */
+    bottom: 0;
     width: 0%;
-    height: 1px; /* espessura da linha */
+    height: 1px;
     background-color: var(--btn);
     transition: width 0.3s ease;
 }
@@ -406,5 +521,179 @@ hr {
 /* Efeito de hover do texto */
 .links button:hover {
     font-weight: 400;
-    font-size: clamp(0.75rem, 1.05vw, 0.85rem); /* responsivo */
+    font-size: clamp(0.75rem, 1.05vw, 0.85rem);
+}
+
+/* Botão do menu para mobile */
+#menu-btn {
+    display: none;
+    font-size: 30px;
+    color: var(--bg);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ————————————————————————
+   RESPONSIVIDADE
+   ———————————————————————— */
+
+/* Telas até 1024px */
+@media (max-width: 1235px) {
+
+    /* Coloca home em coluna */
+    .home-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        padding: 0 5%;
+    }
+
+   /*  ESCONDER A IMAGEM DO HEADER*/
+    /* não consegui fazer com que fique legal no mobile */
+    .monks-img {
+        display: none !important;
+    }
+    /* Galeria vertical */
+    .image-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-inline: 5%;
+    }
+
+    /* Rodapé em coluna */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+}
+
+
+/* Telas até 768px */
+@media (max-width: 768px) {
+
+    /* Menu mobile escondido inicialmente */
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        right: 0;
+        background: var(--bg-home);
+        padding: 20px 0;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    /* App em coluna */
+    .app-container {
+        padding: 40px 5%;
+    }
+
+    .app {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+        border-radius: 25px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+
+    .txt_app h3 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+    }
+
+    .app_img img {
+        width: 300px;
+    }
+
+    .barraNav {
+        justify-content: space-between;
+    }
+
+    header {
+        padding: 40px 5% 60px;
+    }
+
+    .footer form {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+
+    .verificacao-seguranca p{
+        display: none;
+    }
+
+    #pergunta{
+        margin: 1rem;
+    }
+}
+
+/* Telas até 580px */
+@media (max-width: 580px) {
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .monks-img {
+        width: 100%;
+    }
+
+    /* Ajuste do título */
+    .text-and-big .text-block h1 {
+        font-size: 1.6rem;
+    }
+
+    /* Verificação de segurança empilhada */
+    .verificacao-seguranca {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .verificacao-seguranca input {
+        width: 100%;
+    }
+}
+
+/* Telas até 480px (mobile pequeno) */
+@media (max-width: 480px) {
+
+    .home-container .content h1 {
+        font-size: 2rem;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    .text-and-big {
+        gap: 12px;
+    }
+
+    .app_img img {
+        width: 120px;
+    }
+
+    .social-midia img {
+        width: 22px;
+    }
+
+    .links {
+        gap: 16px;
+    }
 }

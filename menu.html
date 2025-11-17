@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tela Menu</title>
+
+    <!-- Arquivo CSS específico para esta tela -->
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+    <!-- Barra superior fixa (versão principal) -->
+    <header class="top-bar">
+        <span class="logo">.monks</span>
+
+        <!-- Ícone de menu-->
+        <span class="menu-icon">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/eae8e4/menu--v3.png"
+                alt="Ícone de menu" />
+        </span>
+    </header>
+
+    <!-- Segunda barra superior-->
+    <header class="top-bar second">
+        <span class="logo">.monks</span>
+        <span class="menu-icon">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/eae8e4/menu--v3.png"
+                alt="Ícone de menu" />
+        </span>
+    </header>
+
+    <!-- Seção principal com as categorias do menu -->
+    <section class="menu-section">
+        <div class="menu-list">
+
+            <!-- Cada botão redireciona para uma página especificada no atributo data-pagina -->
+            <button class="categoria-btn" data-pagina="monks.html">Categoria 1</button>
+            <button class="categoria-btn" data-pagina="monks.html">Categoria 2</button>
+            <button class="categoria-btn" data-pagina="monks.html">Categoria 3</button>
+            <button class="categoria-btn" data-pagina="monks.html">Categoria 4</button>
+
+        </div>
+    </section>
+
+    <!-- Faixa cinza inferior-->
+    <div class="bottom-gray"></div>
+
+    <!-- Script principal que gerencia os eventos do menu -->
+    <script src="monks.js"></script>
+</body>
+
+</html>

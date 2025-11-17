@@ -4,25 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=".Monks - produtos de beleza, bem-estar e autocuidado.">
 
     <title>.Monks</title>
+
+    <!-- Ícone da aba do navegador -->
     <link rel="icon" type="image/png" href="./img/icon_monks.png">
 
+    <!-- Fonte Roboto importada pelo Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- Arquivo de estilos principal -->
     <link rel="stylesheet" href="monks.css">
+
 </head>
 
 <body>
+    <!-- Cabeçalho principal da página -->
     <header id="topo">
 
+        <!-- Barra de navegação -->
         <div class="barraNav">
-            <a href="#topo" class="logo">.monks</a>
 
+            <div class="logo-group">
+                <a href="#topo" class="logo">.monks</a>
+
+                <!-- Botão do menu mobile -->
+                <button id="menu-btn">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/eae8e4/menu--v3.png"
+                        alt="Menu Mobile" />
+                </button>
+            </div>
+
+            <!-- Navegação do site -->
             <nav>
                 <ul>
                     <li><a href="#categ1">Categoria 1</a></li>
@@ -33,47 +48,53 @@
             </nav>
         </div>
 
+        <!-- Área principal-->
         <div class="home-container">
 
             <div class="content">
                 <h1>Beleza e bem-estar inspirados na cidade</h1>
                 <p>
-                    Descubra produtos de cuidado pessoal que refletem a energia, arquitetura e paisagens urbanas, transformando sua rotina em experiências únicas de estilo e estética.
+                    Descubra produtos de cuidado pessoal que refletem a energia, arquitetura e paisagens urbanas,
+                    transformando sua rotina em experiências únicas de estilo e estética.
                 </p>
             </div>
 
-            <div class="header-image">
-                <img src="" alt="Imagem 3D Monks inclinada">
-            </div>
-
+            <!-- Imagem principal do topo -->
+            <img class="monks-img" src="./img/img.monks.png" alt="Imagem destaque .Monks">
         </div>
 
     </header>
 
 
+    <!-- Seção de cards informativos -->
     <section class="cards-section">
         <h2 class="title">Explore a essência urbana de diferentes cidades</h2>
         <p class="text">Descubra os detalhes que tornam cada metrópole única e cheia de personalidade.</p>
 
         <div class="cards-container">
+
+            <!-- Card 1 -->
             <div class="card-img">
                 <img class="image" src="./img/imgP1.png" alt="Produto 1 - Arquitetura Icônica">
                 <h3>Arquitetura Icônica</h3>
                 <p>Linhas, formas e estruturas que definem as cidades mais admiradas do mundo.</p>
             </div>
 
+            <!-- Card 2 -->
             <div class="card-img">
                 <img class="image" src="./img/imgP2.png" alt="Produto 2 - Cultura Urbana">
                 <h3>Cultura Urbana</h3>
                 <p>O movimento, as cores e o ritmo que tornam cada metrópole única.</p>
             </div>
 
+            <!-- Card 3 -->
             <div class="card-img">
                 <img class="image" src="./img/imgP3.png" alt="Produto 3 - Cidades em Movimento">
                 <h3>Cidades em Movimento</h3>
                 <p>Cenários cheios de luz, vida e histórias que acontecem a cada esquina.</p>
             </div>
 
+            <!-- Card 4 -->
             <div class="card-img">
                 <img class="image" src="./img/imgP4.png" alt="Produto 4 - Experiências Modernas">
                 <h3>Experiências Modernas</h3>
@@ -82,36 +103,58 @@
         </div>
     </section>
 
+    <!-- Seção com imagem grande + duas imagens menores -->
     <section class="image-container">
-        <h3>Cidades que inspiram novas perspectivas</h3>
-        <p>Explore paisagens urbanas que combinam modernidade, história e identidade cultural. Cada imagem revela
-            detalhes que fazem das cidades lugares tão fascinantes.</p>
 
-        <div class="grid">
-            <img src="./img/imgG1.png" alt="Imagem principal da seção">
+        <!-- Coluna esquerda -->
+        <div class="text-and-big">
+            <div class="text-block">
+                <h1>Cidades que inspiram novas perspectivas</h1>
+                <p>Explore paisagens urbanas que combinam modernidade...</p>
+            </div>
+
+            <!-- Imagem grande -->
+            <div class="big-image">
+                <img src="./img/imgG1.png" alt="Paisagem urbana moderna">
+            </div>
         </div>
 
-        <div class="right">
-            <img src="./img/imgG2.png" alt="Imagem secundária 1">
-            <br>
-            <img src="./img/imgG3.png" alt="Imagem secundária 2">
+        <!-- Coluna direita com duas imagens pequenas -->
+        <div class="small-images">
+            <img id="imgP1" src="./img/imgG2.png" alt="Cena urbana 1">
+            <img id="imgP2" src="./img/imgG3.png" alt="Cena urbana 2">
         </div>
+
     </section>
 
+
+    <!-- Seção do aplicativo -->
     <section class="app-container">
+
         <div class="app">
-            <h3>Baixe nosso aplicativo</h3>
-            <p>Tenha acesso a conteúdos, inspirações e tendências urbanas diretamente no seu celular. Explore novos
-                cenários e transforme sua forma de ver a cidade.</p>
-            <img src="./img/appStore.png" alt="Disponível na App Store">
-            <img src="./img/googlePlay.png" alt="Disponível no Google Play">
+            <div class="txt_app">
+                <h3>Baixe nosso aplicativo</h3>
+                <p>
+                    Tenha acesso a conteúdos, inspirações e tendências urbanas diretamente no seu celular. Explore novos
+                    cenários e transforme sua forma de ver a cidade.
+                </p>
+            </div>
+
+            <!-- Botões de download -->
+            <div class="app_img">
+                <img src="./img/appStore.png" alt="Disponível na App Store">
+                <img src="./img/googlePlay.png" alt="Disponível no Google Play">
+            </div>
         </div>
+
     </section>
 
+    <!-- Lista de categorias populares -->
     <section class="tag-container">
         <div class="tags">
             <h3>Categorias populares</h3>
             <ul>
+                <!-- Lista de tags de produtos -->
                 <li>Perfumaria</li>
                 <li>Corpo e banho</li>
                 <li>Hidratante</li>
@@ -131,8 +174,10 @@
         </div>
     </section>
 
+    <!-- Cards extras de conteúdo -->
     <section class="cards-section">
         <div class="cards-container">
+
             <div class="card">
                 <h4>Guia visual das metrópoles</h4>
                 <p>Descubra os pontos mais marcantes das cidades e mergulhe em seus detalhes arquitetônicos.</p>
@@ -154,8 +199,12 @@
         </div>
     </section>
 
+    <!-- Rodapé completo -->
     <footer>
+
         <section class="footer">
+
+            <!-- imagem do rodapé -->
             <div class="icon">
                 <img src="./img/icon.png" alt="Ícone da marca">
             </div>
@@ -165,6 +214,7 @@
                 <p>Viva a estética das cidades com .Monks — inspiração para todos os dias.</p>
                 <p>*Explore e descubra cenários urbanos fascinantes*</p>
 
+                <!-- Formulário com quatro campos -->
                 <form action="#" method="post">
                     <input type="text" id="categoria1" name="categoria1" placeholder="*Categoria" required>
                     <input type="text" id="categoria2" name="categoria2" placeholder="*Categoria" required>
@@ -172,9 +222,11 @@
                     <input type="text" id="categoria4" name="categoria4" placeholder="Categoria">
                 </form>
 
+                <!-- Verificação simples de segurança -->
                 <div class="verificacao-seguranca">
                     <h4>Verificação de segurança</h4>
-                    <span id="pergunta"></span> =
+                    <span id="pergunta"></span>
+                    <p>=</p>
                     <input type="number" id="resposta" name="resposta" required>
                     <button type="button" id="verificar">Enviar</button>
                     <p id="mensagem"></p>
@@ -184,30 +236,35 @@
 
         <hr>
 
+        <!-- Segundo bloco do rodapé: redes sociais e links -->
         <section class="information-container">
+
+            <!-- Ícones das redes -->
             <div class="social-midia">
                 <a href="https://www.linkedin.com/in/rafaela-yumi-shimoda/" target="_blank" rel="noopener noreferrer">
-                    <img width="24" height="24"
-                        src="https://img.icons8.com/material-outlined/24/eae8e4/instagram-new--v1.png"
+                    <img src="https://img.icons8.com/material-outlined/24/eae8e4/instagram-new--v1.png"
                         alt="Ícone do Instagram" />
                 </a>
+
                 <a href="https://www.linkedin.com/in/rafaela-yumi-shimoda/" target="_blank" rel="noopener noreferrer">
-                    <img width="24" height="24"
-                        src="https://img.icons8.com/material-outlined/24/eae8e4/whatsapp--v1.png"
+                    <img src="https://img.icons8.com/material-outlined/24/eae8e4/whatsapp--v1.png"
                         alt="Ícone do WhatsApp" />
                 </a>
+
                 <a href="https://www.linkedin.com/in/rafaela-yumi-shimoda/" target="_blank" rel="noopener noreferrer">
-                    <img width="24" height="24" src="https://img.icons8.com/ios-glyphs/24/eae8e4/twitterx--v2.png"
-                        alt="Ícone do Twitter/X" />
+                    <img src="https://img.icons8.com/ios-glyphs/24/eae8e4/twitterx--v2.png" alt="Ícone do X" />
                 </a>
+
                 <a href="https://www.linkedin.com/in/rafaela-yumi-shimoda/" target="_blank" rel="noopener noreferrer">
-                    <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/eae8e4/facebook-f.png"
+                    <img src="https://img.icons8.com/material-outlined/24/eae8e4/facebook-f.png"
                         alt="Ícone do Facebook" />
                 </a>
             </div>
 
+            <!-- Frase de impacto final -->
             <h3>Viva a estética urbana todos os dias</h3>
 
+            <!-- Links básicos -->
             <div class="links">
                 <button>
                     <p>Sobre</p>
@@ -225,6 +282,7 @@
         </section>
     </footer>
 
+    <!-- Arquivo JS principal do site -->
     <script src="monks.js" defer></script>
 </body>
 
