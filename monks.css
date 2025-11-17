@@ -518,7 +518,7 @@ hr {
     width: 100%;
 }
 
-/* Efeito de hover do texto */
+
 .links button:hover {
     font-weight: 400;
     font-size: clamp(0.75rem, 1.05vw, 0.85rem);
@@ -554,6 +554,7 @@ hr {
     .monks-img {
         display: none !important;
     }
+
     /* Galeria vertical */
     .image-container {
         grid-template-columns: 1fr;
@@ -625,7 +626,7 @@ hr {
     }
 
     .footer form {
-        grid-template-columns: 1fr; /* 1 coluna */
+        grid-template-columns: 1fr;
     }
 
     .verificacao-seguranca p{
@@ -659,7 +660,7 @@ hr {
         font-size: 1.6rem;
     }
 
-    /* Verificação de segurança empilhada */
+    /* Verificação de segurança */
     .verificacao-seguranca {
         flex-direction: column;
         align-items: center;
