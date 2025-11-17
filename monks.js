@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-
     /*REDIRECIONAR BOTÕES DA CATEGORIA*/
 
 
